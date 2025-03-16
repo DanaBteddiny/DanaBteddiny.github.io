@@ -1,0 +1,72 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* About Section Styling */
+#about {
+    margin: 20px;
+}
+
+#about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#about p {
+    font-size: 18px;
+}
+
+/* Projects Section Styling */
+#projects {
+    margin: 20px;
+}
+
+#projects h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#projects ul {
+    list-style-type: none;
+}
+
+#projects ul li {
+    margin: 5px 0;
+}
+
+#projects ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
