@@ -1,4 +1,6 @@
 /* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +9,8 @@
 
 /* Body Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
     color: #333;
     margin: 0;
     padding: 0;
@@ -16,7 +18,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #4CAF50;
+    background-color: hsl(176, 23%, 74%);
     color: white;
     text-align: center;
     padding: 20px;
