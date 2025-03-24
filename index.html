@@ -1,0 +1,628 @@
+    <!DOCTYPE html>
+    <html lang="en" class="no-js" >
+    <head>
+
+        <!--- basic page needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
+
+        <script>
+            document.documentElement.classList.remove('no-js');
+            document.documentElement.classList.add('js');
+        </script>
+
+        <!-- CSS
+        ================================================== -->
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- favicons
+        ================================================== -->
+        <link rel="icon" type="image/png" href="images\Dana images\D.png">
+
+    </head>
+</script>
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        cursor: pointer;
+    }
+    
+    .modal-content {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    
+    .certificate-list {
+        list-style-type: none;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .certificate-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .certificate-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    function toggleCertificate(event, modalId) {
+        event.preventDefault();
+        event.stopPropagation();
+        document.getElementById(modalId + '-modal').style.display = "block";
+    }
+    
+    function closeModal() {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.style.display = "none";
+        });
+    }
+    
+    // Close when clicking anywhere on the window
+    window.addEventListener('click', function(event) {
+        const modals = document.querySelectorAll('.modal');
+        let shouldClose = false;
+        
+        modals.forEach(modal => {
+            if (modal.style.display === "block") {
+                shouldClose = true;
+            }
+        });
+        
+        if (shouldClose) {
+            closeModal();
+        }
+    });
+</script>
+    <body id="top">
+
+        
+        <!-- preloader
+        ================================================== -->
+        <div id="preloader">
+            <div id="loader" class="dots-fade">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+
+        <!-- page wrap
+        ================================================== -->
+        <div id="page" class="s-pagewrap">
+
+
+            <!-- # site header 
+            ================================================== -->
+            <header class="s-header">
+                <div class="row s-header__inner">
+
+                    <div class="s-header__block">
+                        <div class="s-header__logo">
+                            <a class="logo" href="index.html">
+                                <img src="images\Dana images\Logo.png" alt="Homepage">
+                            </a>
+                        </div>
+
+                        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                    </div> <!-- end s-header__block -->
+
+                    <nav class="s-header__nav">    
+                        <ul class="s-header__menu-links">
+                            <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
+                            <li><a class="smoothscroll" href="#about">About</a></li>
+                            <li><a class="smoothscroll" href="#works">Projects</a></li>
+                            <li><a class="smoothscroll" href="#footer">Contact</a></li>
+                        </ul> <!-- s-header__menu-links -->    
+                    </nav> <!-- end s-header__nav -->
+
+                </div> <!-- end s-header__inner -->
+            </header> <!-- end s-header -->
+
+
+            <!-- # intro
+            ================================================== -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="row s-intro__content width-sixteen-col">
+                    <div class="column lg-12 s-intro__content-inner grid-block grid-16">
+                        
+                        <div class="s-intro__content-text">
+
+                            <div class="s-intro__content-pretitle text-pretitle">Hello</div>
+                            <h1 class="s-intro__content-title">
+                            I'm Dana Bteddiny <br>
+                            a computer and communications engineer.
+                            </h1>                            
+
+                            <div class="s-intro__content-btns">
+                                <a class="smoothscroll btn" href="#about">More About Me</a>
+                                <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
+                            </div> <!-- s-intro__content-btns -->   
+
+                        </div> <!-- s-intro__content-text -->                     
+                        
+                    </div> <!-- s-intro__content-inner -->  
+                </div> <!-- s-intro__content -->
+
+                <ul class="s-intro__social social-list">
+                    <li>
+                        <a href="https://www.instagram.com/dana_bteddini/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M 8 3 C 5.2504839 3 3 5.2504839 3 8 L 3 16 C 3 18.749516 5.2504839 21 8 21 L 16 21 C 18.749516 21 21 18.749516 21 16 L 21 8 C 21 5.2504839 18.749516 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.668484 5 19 6.3315161 19 8 L 19 16 C 19 17.668484 17.668484 19 16 19 L 8 19 C 6.3315161 19 5 17.668484 5 16 L 5 8 C 5 6.3315161 6.3315161 5 8 5 z M 17 6 A 1 1 0 0 0 17 8 A 1 1 0 0 0 17 6 z M 12 7 C 10.416667 7 9.1018922 7.6297556 8.2519531 8.5859375 C 7.402014 9.5421194 7 10.777778 7 12 C 7 13.222222 7.402014 14.457881 8.2519531 15.414062 C 9.1018922 16.370244 10.416667 17 12 17 C 13.583333 17 14.898108 16.370244 15.748047 15.414062 C 16.597986 14.457882 17 13.222222 17 12 C 17 10.777778 16.597986 9.5421194 15.748047 8.5859375 C 14.898108 7.6297556 13.583333 7 12 7 z M 12 9 C 13.083333 9 13.768559 9.3702444 14.251953 9.9140625 C 14.735347 10.457881 15 11.222222 15 12 C 15 12.777778 14.735347 13.542119 14.251953 14.085938 C 13.768559 14.629755 13.083333 15 12 15 C 10.916667 15 10.231441 14.629756 9.7480469 14.085938 C 9.2646532 13.542118 9 12.777778 9 12 C 9 11.222222 9.2646532 10.457881 9.7480469 9.9140625 C 10.231441 9.3702444 10.916667 9 12 9 z"></path>
+                                </svg>
+                            <span class="u-screen-reader-text">Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dana-bteddiny-a4a605228/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M 6 3 C 4.3550302 3 3 4.3550302 3 6 L 3 18 C 3 19.64497 4.3550302 21 6 21 L 18 21 C 19.64497 21 21 19.64497 21 18 L 21 6 C 21 4.3550302 19.64497 3 18 3 L 6 3 z M 6 5 L 18 5 C 18.56503 5 19 5.4349698 19 6 L 19 18 C 19 18.56503 18.56503 19 18 19 L 6 19 C 5.4349698 19 5 18.56503 5 18 L 5 6 C 5 5.4349698 5.4349698 5 6 5 z M 8.1855469 6.7851562 C 7.4445469 6.7851563 7 7.2293594 7 7.8183594 C 7 8.4113594 7.444375 8.8574219 8.109375 8.8574219 C 8.850375 8.8574219 9.2910156 8.4113594 9.2910156 7.8183594 C 9.2910156 7.2303594 8.8505469 6.7851562 8.1855469 6.7851562 z M 7.0625 9.9628906 L 7.0625 16 L 9.2363281 16 L 9.2363281 9.9628906 L 7.0625 9.9628906 z M 11.033203 9.9628906 L 11.033203 16 L 13.207031 16 L 13.207031 12.697266 C 13.207031 11.718266 13.908141 11.574219 14.119141 11.574219 C 14.330141 11.574219 14.892578 11.785266 14.892578 12.697266 L 14.892578 16 L 17 16 L 17 12.697266 C 17 10.806266 16.154516 9.9628906 15.103516 9.9628906 C 14.052516 9.9628906 13.490031 10.312641 13.207031 10.806641 L 13.207031 9.9628906 L 11.033203 9.9628906 z"></path>
+                            </svg>
+                            <span class="u-screen-reader-text">LinkedIn</span>
+                        </a>
+                    </li>
+                </ul> <!-- end s-intro__social -->
+
+                <div class="s-intro__content-media">                               
+                    <img src="images\Dana images\me.jpg" srcset="images\Dana images\me.jpg 1x, images\Dana images\me.jpg 2x" alt="">
+                </div> <!-- s-intro__content-media -->                
+
+                <div class="s-intro__btn-download">
+                    <a class="btn btn--stroke" href="https://raw.githubusercontent.com/DanaBteddiny/DanaBteddiny.github.io/main/Dana%20Bteddiny%20-%20CV.pdf
+
+                    ">Get My CV</a>
+                </div> <!-- end s-intro__btn-download -->
+                
+                <div class="s-intro__scroll-down">
+                    <a href="#about" class="smoothscroll">
+                        <div class="scroll-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                        </div>
+                        <span class="scroll-text u-screen-reader-text">Scroll Down</span>
+                    </a>
+                </div> <!-- s-intro__scroll-down -->
+
+            </section> <!-- end s-intro -->
+
+
+            <!-- # about
+            ================================================== -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row s-about__content">
+                    <div class="column xl-12">    
+                        
+                        <div class="section-header" data-num="01">
+                            <h2 class="text-display-title">About Me.</h2>
+                        </div> <!-- end section-header -->
+
+                        <p class="attention-getter">
+                        I'm a highly driven computer and communications engineering senior student at American University of Science and Technology. Throughout my studies, I showed strong levels of motivation, hard work, and teamwork in order to obtain my expected grades.
+                        </p>
+
+                        <p class="attention-getter">
+                            I am eager to use my strong foundation and technical skills to contribute to the success of a dynamic team while developing my experience in the field of computer and communications engineering.
+                        </p>
+
+                        <div class="grid-list-items s-about__blocks">
+
+                            <div class="grid-list-items__item s-about__block">
+                                <h4 class="s-about__block-title">Experience</h4>
+                                <ul class="s-about__list">
+                                    <li>
+                                        Robotics and Coding Course, AUST
+                                        <span>Instructor</span>
+                                    </li>
+                                    <li>
+                                        Department of Computer and Communications Engineering, AUST
+                                        <span>Departmental Assistant</span>
+                                    </li>
+                                    <li>
+                                        Department of Computer and Communications Engineering, AUST
+                                        <span>Computer Programming Lab Assistant</span>
+                                    </li>
+                                </ul>
+                            </div> <!--end s-about__block -->
+
+                            <div class="grid-list-items__item s-about__block">
+                                <h4 class="s-about__block-title">Certifications</h4>
+
+                                <ul class="s-about__list">
+                                    <li>
+                                        Cisco Certified Network Associate
+                                        <a class="certificate-list">
+                                                <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'ccna1')">
+                                                    <span>CCNAv7: Introduction to Networks</span>
+                                                </a>
+                                                <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'ccna2')">
+                                                    <span>CCNAv7: Switching, Routing, and Wireless Essentials</span>
+                                                </a>
+                                            </a>
+                                        
+                                        <!-- Modals for certificates -->
+                                        <div id="ccna1-modal" class="modal" onclick="closeModal()">
+                                            <img class="modal-content" src="images/Dana images/ccna1.png">
+                                        </div>
+                                        <div id="ccna2-modal" class="modal" onclick="closeModal()">
+                                            <img class="modal-content" src="images/Dana images/ccna2.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            First Place in Laboratory Exposition
+                                            <span>Microprocessors Laboratory — February 2024</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            First Place in Laboratory Exposition
+                                            <span>Computer Networks Laboratory — June 2024</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> <!--end s-about__block -->
+                            
+                            <div class="grid-list-items__item s-about__block">
+                                <h4 class="s-about__block-title">Skills</h4>
+
+                                <ul class="s-about__list">
+                                    <li>
+                                        Technical Skills
+                                        <span>Python, C, C++, Java <br>
+                                            Embedded Systems<br>
+                                            Raspberry Pi <br>
+                                            Machine learning <br>
+                                            Packet Tracer <br>
+                                            MATLAB <br>
+                                            CAD <br>
+                                            Circuit design<br>
+                                            PCB design <br>
+                                            Network design <br>
+                                            Microsoft Word, Excel, Powerpoint 
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Soft Skills 
+                                        <span>
+                                            Multitasking<br>
+                                            Communication skills <br>
+                                            Organizational skills <br>
+                                            Time management <br>
+                                            Problem solving 
+                                        </span>                               
+                                </ul>
+                            </div> <!--end s-about__block -->
+
+                        </div> <!-- grid-list-items -->
+
+                    </div> <!--end column -->
+                </div> <!--end s-about__content -->
+                
+            </section> <!-- end s-about -->   
+
+
+
+            <!-- # works
+            ================================================== -->
+            <section id="works" class="s-works target-section">
+
+                <div class="row">
+                    <div class="column xl-12">
+                        <div class="section-header" data-num="02">
+                            <h2 class="text-display-title">Projects.</h2>
+                        </div> <!-- end section-header -->
+                    </div>
+                </div>
+
+                <div class="row folio-entries">
+                    <div class="column entry span-two-columns">
+                        <a href="images\Dana images\Brainterpreter.jpg" class="entry__link glightbox" data-glightbox="title: Brainterpreter; description: .entry__desc-new">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\Brainterpreter.jpg" srcset="images\Dana images\Brainterpreter.jpg 1x, images\Dana images\Brainterpreter.jpg 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">Brainterpreter</h4>
+                                <div class="entry__cat">Senior Project</div>
+                            </div>
+                        </a>
+                    
+                        <div class="glightbox-desc entry__desc-new">
+                            <p>
+                                Brainterpreter is a Brain-Computer Interface technology based smart home control system designed for individuals with severe physical disabilities.
+                                <a href="projects/brainterpreter.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- end entry -->
+                    <div class="column entry">
+                        <a href="images\Dana images\pentagon.png" class="entry__link glightbox" data-glightbox="title: Pentagon Network; description: .entry__desc-01">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\pentagon.png"srcset="images\Dana images\pentagon.png 1x, images\Dana images\pentagon.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">Pentagon Network</h4>
+                                <div class="entry__cat">Computer Networks</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-01">
+                            <p>
+                            Created a security-focused simulation of the Pentagon's computer network, emphasizing data flow and network security.
+                            <a href="projects/pentagon.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry -->
+
+                    <div class="column entry">
+                        <a href="images\Dana images\facerec.png" class="entry__link glightbox" data-glightbox="title: Face Recognition Access System; description: .entry__desc-02">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\facerec.png" srcset="images\Dana images\facerec.png 1x, images\Dana images\facerec.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">Face Recognition Access System</h4>
+                                <div class="entry__cat">Embedded Systems</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-02">
+                            <p>
+                            Developed a Python-based face recognition system that grants users access to their saved credentials.
+                            <a href="projects\face_recognition.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry -->
+
+                    <div class="column entry">
+                        <a href="images\Dana images\store.png" class="entry__link glightbox" data-glightbox="title: Retail Shop Application; description: .entry__desc-03">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\store.png" srcset="images\Dana images\store.png 1x, images\Dana images\store.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">Retail Shop Application</h4>
+                                <div class="entry__cat">Computer Programming</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-03">
+                            <p>
+                            Designed an interactive retail store application using C++.
+                            <a href="projects\retail_shop.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry -->
+
+                    <div class="column entry">
+                        <a href="images\Dana images\ATM.png" class="entry__link glightbox" data-glightbox="title: ATM Application; description: .entry__desc-04">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\ATM.png" srcset="images\Dana images\ATM.png 1x, images\Dana images\ATM.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">ATM Application</h4>
+                                <div class="entry__cat">Computer Programming</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-04">
+                            <p>
+                            Built a JAVA-based ATM application for banking transactions.
+                            <a href="projects\ATM.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry -->
+
+                    <div class="column entry">
+                        <a href="images\Dana images\clock.png" class="entry__link glightbox" data-glightbox="title: Digital Clock; description: .entry__desc-05">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\clock.png" srcset="images\Dana images\clock.png 1x, images\Dana images\clock.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">Digital Ben</h4>
+                                <div class="entry__cat">Digital Systems</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-05">
+                            <p>
+                            Built a digital clock using digital systems, which displays the current time using 7-segment LED displays.
+                            <a href="projects/digitalClock.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry -->
+
+                    <div class="column entry">
+                        <a href="images\Dana images\hourglass.png" class="entry__link glightbox" data-glightbox="title: LED Hourglass; description: .entry__desc-06">
+                            <div class="entry__thumb">
+                                <img src="images\Dana images\hourglass.png" srcset="images\Dana images\hourglass.png 1x, images\Dana images\hourglass.png 2x" alt="">
+                            </div>
+                            <div class="entry__info">
+                                <h4 class="entry__title">LED Hourglass</h4>
+                                <div class="entry__cat">Microprocessors</div>
+                            </div>
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-06">
+                            <p>
+                            Designed and developed a digital hourglass using Arduino nano.
+                            <a href="projects/thehourglass.html">Project Link</a>.
+                            </p>
+                        </div>
+                    </div> <!-- entry --> 
+
+                </div> <!-- folio entries -->
+
+
+                <div class="row s-testimonials">
+                    <div class="column xl-12">
+
+                        <h3 class="s-testimonials__header">Hear it from My Peers</h3>
+        
+                        <div class="s-testimonials__grid">
+        
+                            <div class="s-testimonials__slide">
+                            <!--    
+                                <div class="s-testimonials__slide swiper-slide">
+                                    <div class="s-testimonials__author">
+                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="s-testimonials__avatar">
+                                        <cite class="s-testimonials__cite">
+                                            <strong>Mohamad Rahal, Ph.D</strong>
+                                            <span>Chair of Computer and Communications Engineering at AUST</span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                    Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
+                                    Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
+                                    Laudantium quia consequatur molestias.
+                                    </p>
+                                </div>-->
+                
+                                <div class="s-testimonials__slide">
+                                    <div class="s-testimonials__author">
+                                        <img src="images\Dana images\MD.png" alt="Author image" class="s-testimonials__avatar">
+                                        <cite class="s-testimonials__cite">
+                                            <strong>Mohammad Dika, MS</strong>
+                                            <span>Lecturer at American University of Science and Technology <br> Ph.D. Candidate at Universite Polytechnique Hauts-De-France</br> </span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                        As a primarly lab instructor, I have been overseeing Dana's career in engineering, and more specifically the technical aspects.
+                                        I have taught her circuitry, CAD, as well as programming and Control, and I can confidently recommend Dana in those fields whole heartedly.
+                                        She has shown excellent initiative to learn fast, to design efficiently and to adapt to changing tides. I have also had the privilege 
+                                        to be a co-advisor on Brainterpreter, her Capstone project, where Dana has shown excellent ability to learn new applications, apply theory
+                                        and work efficiently in a team. I am confident in recommending Dana in any of the fields mentioned prior and believe whichever organization
+                                        persues her will have a big ROI and excellent outcomes and production.
+                                    </p>
+                                </div> <!-- end s-testimonials__slide -->
+                
+                            </div> <!-- end swiper-wrapper -->
+        
+                            <div class="swiper-pagination"></div>
+        
+                        </div> <!-- end swiper-container -->
+        
+                    </div> <!-- end column -->
+                </div> <!-- end s-testimonials -->
+
+            </section> <!-- end s-works --> 
+
+
+           
+            <!-- # footer 
+            ================================================== -->
+            <footer id="footer" class="s-footer target-section">
+
+                <div class="row">
+                    <div class="column lg-12">
+                        <div class="section-header light-on-dark" data-num="03">
+                            <h2 class="text-display-title">Get In Touch.</h2>
+                        </div> <!-- end section-header -->
+                    </div>
+                </div>
+
+                <div class="row s-footer__content">
+
+                    <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
+                        <p class="attention-getter">
+                            Thank you for visiting my portfolio! If you have any questions, or opportunities you'd like to discuss, I'd love to hear from you.
+                            Whether it's a potential project, a job opportunity, or just a friendly chat about technology and innovation, feel free to reach out.
+                            I'm always open to connecting with like-minded individuals and exploring new possibilities. Let's create something amazing together!
+                        </p>               
+                    </div> <!-- end section-footer__about -->
+
+                    <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
+                        <div class="row">
+                            <div class="column xl-4 lg-5 md-6 tab-12">
+                                <h5>Follow Me</h5>
+                                <ul class="link-list">
+                                    <li><a href="https://www.linkedin.com/in/dana-bteddiny-a4a605228/">LinkedIn</a></li>
+                                    <li><a href="https://www.instagram.com/dana_bteddini/">Instagram</a></li>
+                                </ul>
+                            </div>
+                            <div class="column xl-6 md-6 tab-12">
+                                <h5>Contact Me</h5>
+                                <ul class="link-list">
+                                    <li><a href="mailto:dana.bteddiny28@gmail.com">dana.bteddiny28@gmail.com</a></li>
+                                    <li><a href="tel:+96176189254">+961 76 189 254</a></li>
+                                </ul> 
+                            </div>
+                        </div>                    
+                    </div> <!-- end section-footer__site-links -->
+
+                </div> <!-- end section-footer__content -->
+
+
+                <div class="row s-footer__buttons">
+                
+                    <div class="column xl-6 tab-12">
+                        <a href="mailto:dana.bteddiny@gmail.com" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
+                    </div>
+            
+                    <div class="column xl-6 tab-12">                    
+                        <a href="https://raw.githubusercontent.com/DanaBteddiny/DanaBteddiny.github.io/main/Dana%20Bteddiny%20-%20CV.pdf" class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
+                    </div>
+                
+                </div> <!-- end section-footer__buttons -->              
+                
+                <div class="row s-footer__bottom">
+                    
+                    <div class="column xl-6 lg-12">
+                        <ul class="s-footer__social social-list">
+                            <li>
+                                <a href="https://www.linkedin.com/in/dana-bteddiny-a4a605228/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M 6 3 C 4.3550302 3 3 4.3550302 3 6 L 3 18 C 3 19.64497 4.3550302 21 6 21 L 18 21 C 19.64497 21 21 19.64497 21 18 L 21 6 C 21 4.3550302 19.64497 3 18 3 L 6 3 z M 6 5 L 18 5 C 18.56503 5 19 5.4349698 19 6 L 19 18 C 19 18.56503 18.56503 19 18 19 L 6 19 C 5.4349698 19 5 18.56503 5 18 L 5 6 C 5 5.4349698 5.4349698 5 6 5 z M 8.1855469 6.7851562 C 7.4445469 6.7851563 7 7.2293594 7 7.8183594 C 7 8.4113594 7.444375 8.8574219 8.109375 8.8574219 C 8.850375 8.8574219 9.2910156 8.4113594 9.2910156 7.8183594 C 9.2910156 7.2303594 8.8505469 6.7851562 8.1855469 6.7851562 z M 7.0625 9.9628906 L 7.0625 16 L 9.2363281 16 L 9.2363281 9.9628906 L 7.0625 9.9628906 z M 11.033203 9.9628906 L 11.033203 16 L 13.207031 16 L 13.207031 12.697266 C 13.207031 11.718266 13.908141 11.574219 14.119141 11.574219 C 14.330141 11.574219 14.892578 11.785266 14.892578 12.697266 L 14.892578 16 L 17 16 L 17 12.697266 C 17 10.806266 16.154516 9.9628906 15.103516 9.9628906 C 14.052516 9.9628906 13.490031 10.312641 13.207031 10.806641 L 13.207031 9.9628906 L 11.033203 9.9628906 z"></path>
+                                    </svg>
+                                    <span class="u-screen-reader-text">LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/dana_bteddini/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M 8 3 C 5.2504839 3 3 5.2504839 3 8 L 3 16 C 3 18.749516 5.2504839 21 8 21 L 16 21 C 18.749516 21 21 18.749516 21 16 L 21 8 C 21 5.2504839 18.749516 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.668484 5 19 6.3315161 19 8 L 19 16 C 19 17.668484 17.668484 19 16 19 L 8 19 C 6.3315161 19 5 17.668484 5 16 L 5 8 C 5 6.3315161 6.3315161 5 8 5 z M 17 6 A 1 1 0 0 0 17 8 A 1 1 0 0 0 17 6 z M 12 7 C 10.416667 7 9.1018922 7.6297556 8.2519531 8.5859375 C 7.402014 9.5421194 7 10.777778 7 12 C 7 13.222222 7.402014 14.457881 8.2519531 15.414062 C 9.1018922 16.370244 10.416667 17 12 17 C 13.583333 17 14.898108 16.370244 15.748047 15.414062 C 16.597986 14.457882 17 13.222222 17 12 C 17 10.777778 16.597986 9.5421194 15.748047 8.5859375 C 14.898108 7.6297556 13.583333 7 12 7 z M 12 9 C 13.083333 9 13.768559 9.3702444 14.251953 9.9140625 C 14.735347 10.457881 15 11.222222 15 12 C 15 12.777778 14.735347 13.542119 14.251953 14.085938 C 13.768559 14.629755 13.083333 15 12 15 C 10.916667 15 10.231441 14.629756 9.7480469 14.085938 C 9.2646532 13.542118 9 12.777778 9 12 C 9 11.222222 9.2646532 10.457881 9.7480469 9.9140625 C 10.231441 9.3702444 10.916667 9 12 9 z"></path>
+                                        </svg>
+                                    <span class="u-screen-reader-text">Instagram</span>
+                                </a>
+                            </li>
+                        </ul> 
+                    </div> <!-- end section-footer__social -->
+
+                    
+                </div> <!-- end section-footer__bottom -->          
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">                 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
+                    </a>                                
+                    <span>Back To Top</span>   
+                </div> <!-- end ss-go-top -->
+                
+            </footer> <!-- end s-footer -->
+
+        </div> <!-- end page-wrap -->
+
+
+        <!-- Java Script
+        ================================================== -->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+    </html>

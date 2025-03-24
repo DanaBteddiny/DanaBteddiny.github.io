@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Shop</title>
+    <link rel="stylesheet" href="../css/vendor.css"> <!-- Link to vendor CSS -->
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Link to main CSS -->
+    <link rel="icon" type="images\Dana images\D.png">
+    <style>
+        /* Override or add styles specific to this page */
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--vspace-2) var(--vspace-1);
+        }
+
+        .project-title {
+            font-size: var(--text-xxl);
+            color: var(--color-text-dark);
+            margin-bottom: var(--vspace-0_5);
+            text-align: center;
+        }
+
+        .project-image {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: var(--vspace-1);
+        
+        }
+
+        .project-description {
+            font-size: var(--text-md);
+            color: var(--color-text);
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: var(--vspace-1);
+        }
+        
+            /* ===================================================================
+            * # BUTTONS
+            *
+            *
+            * ------------------------------------------------------------------- */
+            .btn,
+            button,
+            input[type=submit],
+            input[type=reset],
+            input[type=button] {
+                --btn-height           : var(--vspace-btn);
+                display                : inline-block;
+                font-family            : var(--font-1);
+                font-weight            : 500;
+                font-size              : calc(var(--text-size) * 0.6);
+                text-transform         : uppercase;
+                letter-spacing         : 0.3em;
+                height                 : var(--btn-height);
+                line-height            : calc(var(--btn-height) - 4px);
+                padding                : 0 3.6rem;
+                margin                 : 0 0.4rem var(--vspace-0_5) 0;
+                color                  : var(--color-btn-text);
+                text-decoration        : none;
+                text-align             : center;
+                white-space            : nowrap;
+                cursor                 : pointer;
+                transition             : all 0.3s;
+                background-color       : var(--color-btn);
+                border                 : 2px solid var(--color-btn);
+                -webkit-font-smoothing : antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .btn:focus,
+            button:focus,
+            input[type=submit]:focus,
+            input[type=reset]:focus,
+            input[type=button]:focus,
+            .btn:hover,
+            button:hover,
+            input[type=submit]:hover,
+            input[type=reset]:hover,
+            input[type=button]:hover {
+                background-color: var(--color-btn-hover);
+                border-color    : var(--color-btn-hover);
+                color           : var(--color-btn-hover-text);
+                outline         : 0;
+            }
+
+            /* button primary
+            */
+            .btn.btn--primary,
+            button.btn--primary,
+            input[type=submit].btn--primary,
+            input[type=reset].btn--primary,
+            input[type=button].btn--primary {
+                background  : var(--color-btn-primary);
+                border-color: var(--color-btn-primary);
+                color       : var(--color-btn-primary-text);
+            }
+
+            .btn.btn--primary:focus,
+            button.btn--primary:focus,
+            input[type=submit].btn--primary:focus,
+            input[type=reset].btn--primary:focus,
+            input[type=button].btn--primary:focus,
+            .btn.btn--primary:hover,
+            button.btn--primary:hover,
+            input[type=submit].btn--primary:hover,
+            input[type=reset].btn--primary:hover,
+            input[type=button].btn--primary:hover {
+                background  : var(--color-btn-primary-hover);
+                border-color: var(--color-btn-primary-hover);
+                color       : var(--color-btn-primary-hover-text);
+            }
+
+            /* button modifiers
+            */
+            .btn.u-fullwidth,
+            button.u-fullwidth {
+                width       : 100%;
+                margin-right: 0;
+            }
+
+            .btn--small,
+            button.btn--small {
+                --btn-height: calc(var(--vspace-btn) - 1.6rem);
+            }
+
+            .btn--medium,
+            button.btn--medium {
+                --btn-height: calc(var(--vspace-btn) + .8rem);
+            }
+
+            .btn--large,
+            button.btn--large {
+                --btn-height: calc(var(--vspace-btn) + 1.6rem);
+                font-size   : var(--text-xs);
+            }
+
+            .btn--stroke,
+            button.btn--stroke {
+                background : transparent !important;
+                font-weight: 700;
+                border     : 2px solid var(--color-btn-stroke);
+                color      : var(--color-btn-stroke-text);
+            }
+
+            .btn--stroke:focus,
+            button.btn--stroke:focus,
+            .btn--stroke:hover,
+            button.btn--stroke:hover {
+                background: var(--color-btn-stroke-hover) !important;
+                border    : 2px solid var(--color-btn-stroke-hover);
+                color     : var(--color-btn-stroke-hover-text);
+            }
+
+            .btn--pill,
+            button.btn--pill {
+                padding-left : 3.2rem !important;
+                padding-right: 3.2rem !important;
+                border-radius: 1000px !important;
+            }
+            .s-intro__content-text {
+                z-index    : 2;
+                grid-column: 1/span 8;
+                margin-top : var(--vspace-2);
+            }
+            .section-header {
+                display      : flex;
+                align-items  : flex-start;
+                margin-bottom: var(--vspace-3_5);
+                margin-top: var(--vspace-3_5);
+                position: relative;
+            }
+            .text-display-title {
+                font-size     : var(--text-display-1);
+                line-height   : 1.0717;
+                letter-spacing: -0.015em;
+                margin-top    : 0;
+                margin-bottom : var(--vspace-1_5);
+            }
+            .lead,
+            .attention-getter {
+                font-family: var(--font-1);
+                font-size  : var(--text-md);
+                line-height: var(--vspace-1_25);
+                text-align: justify;
+                text-justify: inter-character;
+            }
+    </style>
+</head>
+<body id="top">
+
+    <!-- preloader -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- page wrap -->
+    <div id="page" class="s-pagewrap">
+                    <!-- # site header 
+            ================================================== -->
+            <header class="s-header">
+                <div class="row s-header__inner">
+
+                    <div class="s-header__block">
+                        <div class="s-header__logo">
+                            <a class="logo" href="retail_shop.html">
+                                Retail Shop
+                            </a>
+                        </div>
+                    </div> <!-- end s-header__block -->
+
+                </div> <!-- end s-header__inner -->
+            </header> <!-- end s-header -->
+        <!-- project content -->
+        <div class="project-container">
+            <img src="images\Dana images\store.png" alt="Retail Shop Project" class="project-image">
+                                <!-- # about
+            ================================================== -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row s-about__content">
+                    <div class="column xl-12">    
+                        
+                        <div class="section-header" data-num="01">
+                            <h2 class="text-display-title">Overview</h2>
+                        </div> <!-- end section-header -->
+
+                        <p class="attention-getter">
+                            This project is a C++-based retail shop application designed to efficiently track and manage inventory. It allows store staff to add new items, set unit prices, and update stock quantities. The system also keeps track of sales, ensuring the store manager has an accurate view of available inventory and financial transactions.
+                        </p>
+                    </div>
+                            
+                <div class="column xl-12">    
+        
+                    <div class="section-header" data-num="02">
+                        <h2 class="text-display-title">Functionality & Workflow</h2>
+                    </div> <!-- end section-header -->
+                    <div class="grid-list-items s-about__blocks">
+                    <div class="grid-list-items__item s-about__block">
+                        <ul class="s-about__list">
+                            <div>
+                                User Authentication
+                                <span>Each staff member logs in using a unique username and password to access their shift</span>
+                            </div>
+                            <div>
+                                Inventory Management
+                                <span>Users can add new items, update quantities, and check stock levels</span>
+                            </div>
+                            <div>
+                                Sales Traking
+                                <span>When an item is sold, the system updates stock levels automatically</span>
+                            </div>
+                            <div>
+                                Shift-Based Monitoring
+                                <span>Sales and expenses are tracked for each shift, allowing staff to monitor their individual sales, income, and stock costs</span>
+                            </div>
+                            <div>
+                                Daily Summary
+                                <span>At the end of each shift, the system generates a financial report displaying the total revenue and stock purchases during that period</span>
+                            </div>
+                        </ul>
+                    </div> <!--end s-about__block -->
+                    </div> <!--end s-about__content -->
+                <div class="row s-about__content">
+                    <div class="column xl-12">    
+                        
+                        <div class="section-header" data-num="03">
+                            <h2 class="text-display-title">System Workflow</h2>
+                        </div> <!-- end section-header -->
+
+                        <p class="attention-getter">
+                            The flowchart illustrates the interaction between store staff, inventory, and sales records, ensuring a clear understanding of the system's functionality.
+                        </p>
+                        <img src = "images\Dana images\retail_flowchart.png">
+                    </div>
+                </div>
+                
+            </section> <!-- end s-about --> 
+            <a href="../index.html" class="u-fullwidth">&#8592; Back to Portfolio</a>
+        </div>
+
+    </div> <!-- end page-wrap -->
+
+    <!-- Java Script -->
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
