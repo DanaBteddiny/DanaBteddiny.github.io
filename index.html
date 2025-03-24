@@ -19,11 +19,79 @@
         <link rel="stylesheet" href="css/styles.css">
         <!-- favicons
         ================================================== -->
-        <link rel="manifest" href="site.webmanifest">
+        <link rel="icon" type="image/png" href="C:\Users\HP\Desktop\Dana Portfolio\images\Dana images\D.png">
 
     </head>
+</script>
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        cursor: pointer;
+    }
+    
+    .modal-content {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    
+    .certificate-list {
+        list-style-type: none;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+    
+    .certificate-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .certificate-link:hover {
+        text-decoration: underline;
+    }
+</style>
 
-
+<script>
+    function toggleCertificate(event, modalId) {
+        event.preventDefault();
+        event.stopPropagation();
+        document.getElementById(modalId + '-modal').style.display = "block";
+    }
+    
+    function closeModal() {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.style.display = "none";
+        });
+    }
+    
+    // Close when clicking anywhere on the window
+    window.addEventListener('click', function(event) {
+        const modals = document.querySelectorAll('.modal');
+        let shouldClose = false;
+        
+        modals.forEach(modal => {
+            if (modal.style.display === "block") {
+                shouldClose = true;
+            }
+        });
+        
+        if (shouldClose) {
+            closeModal();
+        }
+    });
+</script>
     <body id="top">
 
         
@@ -181,19 +249,32 @@
 
                                 <ul class="s-about__list">
                                     <li>
-                                        <a href="#0">
-                                            Cisco Certified Network Associate
-                                            <span> CCNA1 & CCNA2: Completed with excellence — June 2024</span>
-                                        </a>                                        
+                                        Cisco Certified Network Associate
+                                        <a class="certificate-list">
+                                                <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'ccna1')">
+                                                    <span>CCNAv7: Introduction to Networks</span>
+                                                </a>
+                                                <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'ccna2')">
+                                                    <span>CCNAv7: Switching, Routing, and Wireless Essentials</span>
+                                                </a>
+                                            </a>
+                                        
+                                        <!-- Modals for certificates -->
+                                        <div id="ccna1-modal" class="modal" onclick="closeModal()">
+                                            <img class="modal-content" src="images/Dana images/ccna1.png">
+                                        </div>
+                                        <div id="ccna2-modal" class="modal" onclick="closeModal()">
+                                            <img class="modal-content" src="images/Dana images/ccna2.png">
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="#0">
+                                        <a>
                                             First Place in Laboratory Exposition
                                             <span>Microprocessors Laboratory — February 2024</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#0">
+                                        <a>
                                             First Place in Laboratory Exposition
                                             <span>Computer Networks Laboratory — June 2024</span>
                                         </a>
@@ -211,6 +292,7 @@
                                             Embedded Systems<br>
                                             Raspberry Pi <br>
                                             Machine learning <br>
+                                            Packet Tracer <br>
                                             MATLAB <br>
                                             CAD <br>
                                             Circuit design<br>
@@ -266,7 +348,7 @@
                     
                         <div class="glightbox-desc entry__desc-new">
                             <p>
-                                This is an exciting new project where I built a revolutionary system that does amazing things. You can learn more about the project by clicking on the link below.
+                                Brainterpreter is a Brain-Computer Interface technology based smart home control system designed for individuals with severe physical disabilities.
                                 <a href="projects/brainterpreter.html">Project Link</a>.
                             </p>
                         </div>
@@ -323,7 +405,7 @@
                         <div class="glightbox-desc entry__desc-03">
                             <p>
                             Designed an interactive retail store application using C++.
-                            <a href="/projects/retail_shop.html">Project Link</a>.
+                            <a href="projects\retail_shop.html">Project Link</a>.
                             </p>
                         </div>
                     </div> <!-- entry -->
@@ -353,7 +435,7 @@
                                 <img src="images\Dana images\clock.png" srcset="images\Dana images\clock.png 1x, images\Dana images\clock.png 2x" alt="">
                             </div>
                             <div class="entry__info">
-                                <h4 class="entry__title">Digital Clock</h4>
+                                <h4 class="entry__title">Digital Ben</h4>
                                 <div class="entry__cat">Digital Systems</div>
                             </div>
                         </a>
@@ -361,7 +443,7 @@
                         <div class="glightbox-desc entry__desc-05">
                             <p>
                             Built a digital clock using digital systems, which displays the current time using 7-segment LED displays.
-                            <a href="/projects/digitalClock.html">Project Link</a>.
+                            <a href="projects/digitalClock.html">Project Link</a>.
                             </p>
                         </div>
                     </div> <!-- entry -->
@@ -380,7 +462,7 @@
                         <div class="glightbox-desc entry__desc-06">
                             <p>
                             Designed and developed a digital hourglass using Arduino nano.
-                            <a href="https://www.behance.net/">Project Link</a>.
+                            <a href="projects/thehourglass.html">Project Link</a>.
                             </p>
                         </div>
                     </div> <!-- entry --> 
@@ -391,12 +473,12 @@
                 <div class="row s-testimonials">
                     <div class="column xl-12">
 
-                        <h3 class="s-testimonials__header">Hear it from My Instructors</h3>
+                        <h3 class="s-testimonials__header">Hear it from My Peers</h3>
         
                         <div class="s-testimonials__grid">
         
                             <div class="s-testimonials__slide">
-
+                            <!--    
                                 <div class="s-testimonials__slide swiper-slide">
                                     <div class="s-testimonials__author">
                                         <img src="images/avatars/user-02.jpg" alt="Author image" class="s-testimonials__avatar">
@@ -410,20 +492,23 @@
                                     Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
                                     Laudantium quia consequatur molestias.
                                     </p>
-                                </div> <!-- end s-testimonials__slide -->
+                                </div>-->
                 
                                 <div class="s-testimonials__slide">
                                     <div class="s-testimonials__author">
-                                        <img src="images/avatars/user-03.jpg" alt="Author image" class="s-testimonials__avatar">
+                                        <img src="C:\Users\HP\Desktop\Dana Portfolio\images\Dana images\MD.png" alt="Author image" class="s-testimonials__avatar">
                                         <cite class="s-testimonials__cite">
                                             <strong>Mohammad Dika, MS</strong>
                                             <span>Lecturer at American University of Science and Technology <br> Ph.D. Candidate at Universite Polytechnique Hauts-De-France</br> </span>
                                         </cite>
                                     </div>
                                     <p>
-                                    Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                                    Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                                    Quasi voluptas eius distinctio. Atque eos maxime.
+                                        As a primarly lab instructor, I have been overseeing Dana's career in engineering, and more specifically the technical aspects.
+                                        I have taught her circuitry, CAD, as well as programming and Control, and I can confidently recommend Dana in those fields whole heartedly.
+                                        She has shown excellent initiative to learn fast, to design efficiently and to adapt to changing tides. I have also had the privilege 
+                                        to be a co-advisor on Brainterpreter, her Capstone project, where Dana has shown excellent ability to learn new applications, apply theory
+                                        and work efficiently in a team. I am confident in recommending Dana in any of the fields mentioned prior and believe whichever organization
+                                        persues her will have a big ROI and excellent outcomes and production.
                                     </p>
                                 </div> <!-- end s-testimonials__slide -->
                 
