@@ -231,7 +231,9 @@
                                 <ul class="s-about__list">
                                     <li>
                                         Robotics and Coding Course, AUST
+                                        <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'instructor')">
                                         <span>Instructor</span>
+                                        </a>
                                     </li>
                                     <li>
                                         Department of Computer and Communications Engineering, AUST
@@ -242,6 +244,9 @@
                                         <span>Computer Programming Lab Assistant</span>
                                     </li>
                                 </ul>
+                                <div id="instructor-modal" class="modal" onclick="closeModal()">
+                                <img class="modal-content" src="dana-images/instructor.jpeg">
+                            </div>
                             </div> <!--end s-about__block -->
 
                             <div class="grid-list-items__item s-about__block">
@@ -266,11 +271,16 @@
                                         <div id="ccna2-modal" class="modal" onclick="closeModal()">
                                             <img class="modal-content" src="dana-images/ccna2.png">
                                         </div>
+                                        <div id="micro-modal" class="modal" onclick="closeModal()">
+                                        <img class="modal-content" src="dana-images/micro.jpeg">
+                                    </div>
                                     </li>
                                     <li>
                                         <a>
                                             First Place in Laboratory Exposition
+                                            <a href="#" class="certificate-link" onclick="toggleCertificate(event, 'micro')">
                                             <span>Microprocessors Laboratory — February 2024</span>
+                                            </a>
                                         </a>
                                     </li>
                                     <li>
