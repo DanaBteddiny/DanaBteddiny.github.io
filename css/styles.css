@@ -3893,7 +3893,7 @@ td:last-child {
  *
  * ------------------------------------------------------------------- */
 .s-about {
-    padding-top: 0;
+    padding-top: var(--vspace-3);
     color      : var(--color-3);
 }
 
